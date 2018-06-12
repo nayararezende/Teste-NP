@@ -1,0 +1,29 @@
+---
+title: "Comandos_GIT"
+author: "Nayara"
+date: "12 de junho de 2018"
+output: html_document
+---
+
+# PASSO A PASSO
+
+- Criar pasta;
+- Criar um novo script Markdown;
+- Com botão direito dentro da nova pasta, selecionar a opção: Git Bash Here;
+- Abrir o terminal do GIT (também tem no RStudio também)
+
+
+
+## Comandos do Terminal
+
+ls: lista todos os arquivos que contem na pasta;
+git init: iniciar um repositório vazio de GIT;
+ll OU ls - : mostrar todos os arquivos que contem na pasta (inclusive os ocultos);
+
+
+## Comandos GIT
+
+git status: mostra o status do repositório, versão, mudanças, contribuição de outros pesquisadores, etc;
+git add: para adicionar um arquivo (pode adicionar um arquivo de cada vez ou então adiciona espaço e ponto para adicionar todos);
+commit: mensagem com o que contém o arquivo ou qual modificação fez no arquivo;
+push: 
