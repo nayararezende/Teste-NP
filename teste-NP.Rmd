@@ -5,26 +5,62 @@ date: "12 de junho de 2018"
 output: word_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+
+# PASSO A PASSO
+
+- Criar pasta;
+- Criar um novo script Markdown;
+- Com botão direito dentro da nova pasta, selecionar a opção: Git Bash Here;
+- Abrir o terminal do GIT (também tem no RStudio também)
+
+
+## Comandos do Terminal
+
+- ls: lista todos os arquivos que contem na pasta;
+git init: iniciar um repositório vazio de GIT;
+- ll OU ls -a: mostrar todos os arquivos que contem na pasta (inclusive os ocultos);
+- git config --global user.name: informa quem é o usuário de contato;
+- git config --global user.email: informa quem o e-mail de contato;
+
+```
+ls
+git init
+ll
+git config --global user.name "Nayara Pereira Rezende de Sousa"
+git config --global user.email "nayprs@gmail.com"
+
 ```
 
-## R Markdown
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+## Comandos GIT
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+- git status: mostra o status do repositório, versão, mudanças, contribuição de outros pesquisadores, etc;
+- git add: para adicionar um arquivo (pode adicionar um arquivo de cada vez ou então adiciona espaço e ponto para adicionar todos);
+- git commit: abre um editor de texto dentro do terminal para adicionar uma mensagem, mas é difícil de fechar o editor de texto;
+- git commit -m: "mensagem com o que contém o arquivo ou qual modificação fez no arquivo". Através do número de commit (visto pelo git log) consegue voltar a versão de um arquivo, voltar o código e arquivos antes das modificações. Toda vez que realiza alguma modificacção RECOMENDA-SE adicionar uma mensagem commit explicando quais foram as modificações realizadas;
+- git log: registro de todo commit feito, acessar os registros de criação e modificações (lista todas as mensagens de commit);
+- git checkout -- <file>: para descartar as mudanças feitas do diretório (Ctrl+Z);
+- git ignore: ignora arquivos no GIT para não enviar para a nuvem (arquivo criado em files, pode adicionar o caminho e nomes dos arquivos a serem ignorados nesse arquivo, RECOMENDA-SE ignorar arquivos muito pesados para não encher a nuvem do GIT);
+- git diff <nome do arquivo.Rmd>: para ver as modificações feitas no status do arquivo;
+- git rm -r --cached .Rproj.*: função para remover os arquivos temporários que RStudio gera quando cria um projeto. Outra opção é criar a pasta, dar o comando git init no terminal do git e depois criar um projeto do R. Ou então, adicionar o caminho da pasta no .gitignore;
+- git remote add origin <link gerado no gitHub>: cria um acesso remoto com o link do novo repositório do gitHub;
+- git push -u origin master: envia os arquivos para a nuvem, posteriormente pode modificar o arquivo ou enviar para contribuições/modificações externas;
+- git branch: quantas ramificações tem no repositório;
+- gitk: histórico do login e atualizações no git;
+- git full: retoma o arquivo antes do último git push, mas NÃO RECOMENDA utilizar esse comando e fazer alterações apenas no terminar do GIT ou do RStudio, mas não alterar arquivos no repositório do GITHub.
 
-```{r cars}
-summary(cars)
+
 ```
+git status
+git add
+git status
+git commit -m "minha mensagem"
+git log
+git diff teste-NP.Rmd
+git rm -r --cached .Rproj.*
+git status
+git commit -m "deletou arquivos temporários que RStudio gera quando cria um projeto"
+git remote add origin https://github.com/nayararezende/Teste-NP.git
+git push -u origin master
 
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
 ```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
